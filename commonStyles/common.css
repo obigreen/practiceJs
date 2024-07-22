@@ -4,6 +4,15 @@
     box-sizing: border-box;
 }
 
+.body {
+
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .main {
 
 }
@@ -14,7 +23,8 @@
     padding: 0 15px;
 }
 
-.header {
+.header,
+.ref {
     padding: 20px 0;
 }
 
@@ -25,4 +35,11 @@ font-family: Arial,sans-serif;
 
 .main {
     margin-top: 150px;
+    margin-bottom: 150px;
+}
+
+.ref .container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }

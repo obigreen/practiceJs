@@ -9,68 +9,6 @@
 </head>
 <body>
 
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 15px;
-    }
-
-    .header {
-        padding: 20px 0;
-    }
-
-    .title {
-        font-family: Arial, sans-serif;
-        font-size: 35px;
-    }
-
-    .main {
-        margin-top: 150px;
-    }
-
-    .section {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    #puzzle {
-        background-color: #ccc;
-        border: 5px solid black;
-        display: grid;
-        grid-gap: 1px;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-        width: 240px;
-        height: 240px;
-    }
-
-    .tile {
-        align-items: center;
-        background: white;
-        border-radius: 12px;
-        cursor: pointer;
-        display: flex;
-        font-size: 36px;
-        font-weight: bold;
-        justify-content: center;
-        transition: transform 0.3s ease;
-    }
-
-    .tile.empty {
-        opacity: 0;
-        pointer-events: none;
-    }
-
-</style>
-
 <header class="header">
     <div class="container">
         <h1 class="title">Sliding Puzzle</h1>
@@ -90,6 +28,13 @@
         <!--code-->
     </div>
 </main>
+
+<footer class="ref">
+    <div class="container">
+        <img width="20" height="20" src="https://img.icons8.com/ios-filled/50/link--v1.png" alt="link--v1"/>
+        <a class="ref-a" href="https://codepen.io/leemartin/pen/VwmdyNQ">Simple Vue 8 Puzzle - Lee Martin</a>
+    </div>
+</footer>
 
 
 <script src="scripts/script.js"></script>
