@@ -1,0 +1,73 @@
+.item-button {
+    background-color: white;
+    border-radius: 60px;
+    width: 100%;
+    padding: 18px;
+    font-size: 18px;
+    color: black;
+    border: 0;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+img {
+    width: 100%;
+}
+
+.items {
+    display: grid;
+    grid-template-columns: repeat(3, 384px);
+    gap: 90px 24px;
+    margin-top: 110px;
+}
+
+.item {
+    background-color: #f3f3f3;
+    color: black;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+}
+
+.item-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.item-details {
+    padding: 24px 0;
+}
+
+.item-title {
+    font-family: 'Steppe-ExtraBold', sans-serif;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.item-text {
+    height: 110px;
+    font-size: 14px;
+    line-height: 120%;
+    margin-bottom: 20px;
+    font-weight: 350;
+}
+
+.item-extra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-price {
+    font-family: 'Steppe-ExtraBold', sans-serif;
+    color: #5243F4;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.item-weight {
+    font-size: 12px;
+}

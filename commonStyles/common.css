@@ -4,8 +4,8 @@
     box-sizing: border-box;
 }
 
-.body {
-
+body {
+    font-family: Arial, sans-serif;
 }
 
 a {
@@ -28,8 +28,13 @@ a {
     padding: 20px 0;
 }
 
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .title {
-font-family: Arial,sans-serif;
     font-size: 35px;
 }
 
