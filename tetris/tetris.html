@@ -23,7 +23,38 @@
 <main class="main">
     <div class="container">
         <!--code-->
-
+        <div id="game-container">
+            <div id="board-container">
+                <!--canvas-->
+                <canvas id="tetris-board" width="300px" height="600px"></canvas>
+                <!--canvas-->
+            </div>
+            <div id="controls">
+                <div id="score">Score: <span id="score-value">0</span></div>
+                <div id="next-piece-container">
+                    <h3></h3>
+                    <!--canvas-->
+                    <canvas id="next-piece" width="120" height="120"></canvas>
+                    <!--canvas-->
+                </div>
+                <div class="d-pad">
+                    <div id="left" class="d-pad-button">&#9664;</div>
+                    <div id="right" class="d-pad-button">&#9654;</div>
+                    <div id="down" class="d-pad-button">&#9660;</div>
+                    <div id="rotate" class="d-pad-button">R</div>
+                </div>
+                <button id="start-button">Start Game</button>
+                <div id="instructions">
+                    Use arrow keys to move.<br>
+                    Press UP, "R" or "0" to rotate.
+                </div>
+                <div id="music-control">
+                    <label>
+                        <input type="checkbox" id="music-toggle" checked> Background Music
+                    </label>
+                </div>
+            </div>
+        </div>
 
 
         <!--code-->
