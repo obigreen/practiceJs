@@ -37,20 +37,21 @@
                     <canvas id="next-piece" width="120" height="120"></canvas>
                     <!--canvas-->
                 </div>
-                <div class="d-pad">
-                    <div id="left" class="d-pad-button">&#9664;</div>
-                    <div id="right" class="d-pad-button">&#9654;</div>
-                    <div id="down" class="d-pad-button">&#9660;</div>
-                    <div id="rotate" class="d-pad-button">R</div>
-                </div>
+<!--                <div class="d-pad">-->
+<!--                    <div id="left" class="d-pad-button">&#9664;</div>-->
+<!--                    <div id="right" class="d-pad-button">&#9654;</div>-->
+<!--                    <div id="down" class="d-pad-button">&#9660;</div>-->
+<!--                    <div id="rotate" class="d-pad-button">R</div>-->
+<!--                </div>-->
                 <button id="start-button">Start Game</button>
+                <button id="restart-button" style="display: none">Restart Game</button>
                 <div id="instructions">
                     Use arrow keys to move.<br>
-                    Press UP, "R" or "0" to rotate.
+                    Press "A","S","D" and "W" to rotate.
                 </div>
                 <div id="music-control">
                     <label>
-                        <input type="checkbox" id="music-toggle" checked> Background Music
+                        <input type="checkbox" id="music-toggle"> Background Music
                     </label>
                 </div>
             </div>
@@ -68,7 +69,7 @@
     </div>
 </footer>
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
 <script src="scripts/script.js"></script>
 </body>
 </html>
