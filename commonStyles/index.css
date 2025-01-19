@@ -48,7 +48,7 @@ img {
 }
 
 .item-text {
-    height: 110px;
+    /*height: 110px;*/
     font-size: 14px;
     line-height: 120%;
     margin-bottom: 20px;
