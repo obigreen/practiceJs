@@ -17,6 +17,7 @@ let nextPiece;
 let gameInterval;
 let gameRunning = false
 let score = 0;
+let currentLevel = 1;
 
 
 //Фигуры
@@ -179,10 +180,27 @@ function clearLines() {
             score += points;
             document.getElementById("score-value").textContent = String(score);
 
+            // Проверка на увеличение уровня
+            const newLevel = Math.floor(score / 300) + 1;
+            if (newLevel > currentLevel) {
+                currentLevel = newLevel;
+                increaseGameSpeed();
+            }
+
             drawBoard()
         }, 200)
     }
 }
+
+function increaseGameSpeed() {
+    clearInterval(gameInterval);
+
+    const newSpeed = Math.max(GAME_SPEED - currentLevel * 50);
+    gameInterval = setInterval(update, newSpeed);
+
+    console.log(`Level: ${currentLevel}, Speed: ${newSpeed}ms`);
+}
+
 
 
 //Заканчиваем игру, обновляем поле, выводим сообщение
