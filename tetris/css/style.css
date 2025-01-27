@@ -7,6 +7,7 @@
     justify-content: center;
     gap: 10px;
     font-family: "VT323", monospace;
+    position: relative;
 }
 
 /*main canvas*/
@@ -41,16 +42,17 @@
 }
 
 .d-pad {
-    max-width: 150px;
+    display: none;
+    /*max-width: 150px;*/
     width: 100%;
-    max-height: 150px;
-    height: 100%;
+    /*max-height: 150px;*/
+    /*height: 100%;*/
     position: relative;
     margin-top: 20px;
 }
 
 .d-pad-button {
-    position: absolute;
+    /*position: absolute;*/
     width: 50px;
     height: 50px;
     background-color: #ddd;
@@ -63,27 +65,43 @@
     user-select: none;
 }
 
-#left {
-    top: 50px;
-    left: 0;
+.left-right {
+    display: flex;
+    gap: 10px;
 }
 
-#right {
-    top: 50px;
-    right: 0;
+.down-rotate {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 10px;
 }
 
-#down {
-    top: 100px;
-    left: 50px;
+/*#left {*/
+/*    top: 50px;*/
+/*    left: 0;*/
+/*}*/
+
+/*#right {*/
+/*    top: 50px;*/
+/*    right: 0;*/
+/*}*/
+
+/*#down {*/
+/*    top: 100px;*/
+/*    left: 50px;*/
+/*}*/
+
+/*#rotate {*/
+/*    top: 0;*/
+/*    left: 50px;*/
+/*}*/
+
+.buttons-wrapper {
+    position: relative;
+    width: 100%;
 }
 
-#rotate {
-    top: 0;
-    left: 50px;
-}
-
-#start-button {
+#start-button, #restart-button {
     font-family: "VT323", monospace;
     font-size: 24px;
     padding: 10px 20px;
@@ -104,3 +122,47 @@
     font-size: 18px;
 }
 
+#restart-button {
+    position: absolute;
+    margin-top: 20px;
+    top: 0;
+    left: 0;
+}
+
+
+@media screen and (max-width: 1024px) {
+    #game-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #controls {
+        max-width: 302px;
+    }
+
+    #instructions {
+        display: none;
+    }
+
+    #next-piece-container {
+        position: absolute;
+        bottom: 100px;
+        right: calc(50% - 90px);
+    }
+
+    .d-pad {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #score {
+        position: absolute;
+        left: 37px;
+    }
+
+    #next-piece {
+        border: none;
+        z-index: -1;
+    }
+}

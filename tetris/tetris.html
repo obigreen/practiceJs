@@ -30,6 +30,17 @@
                 <!--canvas-->
             </div>
             <div id="controls">
+                <div class="d-pad">
+                    <div class="left-right">
+                        <div id="left" class="d-pad-button">&#9664;</div>
+                        <div id="right" class="d-pad-button">&#9654;</div>
+                    </div>
+                    <div class="down-rotate">
+                        <div id="down" class="d-pad-button">&#9660;</div>
+                        <div id="rotate" class="d-pad-button">R</div>
+                    </div>
+                </div>
+
                 <div id="score">Score: <span id="score-value">0</span></div>
                 <div id="next-piece-container">
                     <h3></h3>
@@ -37,14 +48,11 @@
                     <canvas id="next-piece" width="120" height="120"></canvas>
                     <!--canvas-->
                 </div>
-<!--                <div class="d-pad">-->
-<!--                    <div id="left" class="d-pad-button">&#9664;</div>-->
-<!--                    <div id="right" class="d-pad-button">&#9654;</div>-->
-<!--                    <div id="down" class="d-pad-button">&#9660;</div>-->
-<!--                    <div id="rotate" class="d-pad-button">R</div>-->
-<!--                </div>-->
-                <button id="start-button">Start Game</button>
-                <button id="restart-button" style="display: none">Restart Game</button>
+                <div class="buttons-wrapper">
+                    <button id="start-button">Start Game</button>
+                    <button id="restart-button" style="display: none">Restart Game</button>
+                </div>
+
                 <div id="instructions">
                     Use arrow keys to move.<br>
                     Press "A","S","D" and "W" to rotate.
@@ -56,8 +64,6 @@
                 </div>
             </div>
         </div>
-
-
         <!--code-->
     </div>
 </main>
@@ -65,7 +71,7 @@
 <footer class="ref">
     <div class="container">
         <img width="20" height="20" src="https://img.icons8.com/ios-filled/50/link--v1.png" alt="link--v1"/>
-        <a class="ref-a" href="">автор</a>
+        <a class="ref-a" target="_blank" href="https://codepen.io/tommyho/pen/PorzmrV">CPChallenge - Geometric Puzzles Retro Tetris Simulator - Tommy Ho</a>
     </div>
 </footer>
 

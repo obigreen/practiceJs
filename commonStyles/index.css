@@ -71,3 +71,21 @@ img {
 .item-weight {
     font-size: 12px;
 }
+
+
+
+/* Для Swiper */
+.swiper {
+    margin-top: 110px;
+    width: 100%;
+}
+
+.swiper-wrapper {
+    display: flex;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}

@@ -119,7 +119,6 @@ function collision(x, y, shape) {
 
 //Функция изменения состояния игры
 function update() {
-
     if (!collision(currentPiece.x, currentPiece.y + 1, currentPiece.shape)) {
         currentPiece.y++
     } else {
@@ -271,6 +270,17 @@ function rotate(shape) {
         newShape.push(newRow);
     }
     return newShape;
+}
+
+const buttonActions = {
+    left: moveLeft,
+    right: moveRight,
+    down: moveDown,
+    rotate: rotatePiece,
+};
+
+for (const [id, action] of Object.entries(buttonActions)) {
+    document.getElementById(id).addEventListener("click", action);
 }
 
 document.addEventListener("keydown", event => {

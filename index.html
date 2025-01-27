@@ -6,6 +6,7 @@
     <title>Codes</title>
     <link rel="stylesheet" href="commonStyles/common.css">
     <link rel="stylesheet" href="commonStyles/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
 
 <body>
@@ -19,43 +20,123 @@
 
 <main class="main">
     <div class="container">
-        <div class="items">
-            <!--Sliding Puzzle-->
-            <div class="item">
-                <div class="item-image">
-                    <img src="commonFiles/img/slidingPuzzle.png" alt="img">
-                </div>
-                <div class="item-details">
-                    <div class="item-title">Sliding Puzzle</div>
-                    <div class="item-text">
-                        "Sliding Puzzle" — это логическая игра, где пронумерованные плитки размещены в квадрате с одной
-                        пустой ячейкой. Цель — переместить плитки, используя пустую ячейку, чтобы расположить их в
-                        порядке.
-                    </div>
-                    <div class="item-extra">
-                        <a href="slidingPuzzle/slidingpuzzle.html" class="item-button">Играть</a>
-                    </div>
-                </div>
-            </div>
-            <!--Tetris-->
-            <div class="item">
-                <div class="item-image">
-                    <img src="commonFiles/img/tetris.png" alt="img">
-                </div>
-                <div class="item-details">
-                    <div class="item-title">Tetris</div>
-                    <div class="item-text">
-                        "Tetris" — это
-                    </div>
-                    <div class="item-extra">
-                        <a href="tetris/tetris.html" class="item-button">Играть</a>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <!-- Sliding Puzzle -->
+                <div class="swiper-slide">
+                    <div class="item">
+                        <div class="item-image">
+                            <img src="commonFiles/img/slidingPuzzle.png" alt="img">
+                        </div>
+                        <div class="item-details">
+                            <div class="item-title">Sliding Puzzle</div>
+                            <div class="item-text">
+                                "Sliding Puzzle" — это логическая игра, где пронумерованные плитки размещены в квадрате
+                                с одной
+                                пустой ячейкой. Цель — переместить плитки, используя пустую ячейку, чтобы расположить их
+                                в
+                                порядке.
+                            </div>
+                            <div class="item-extra">
+                                <a href="slidingPuzzle/slidingpuzzle.html" class="item-button">Играть</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+                <!-- Tetris -->
+                <div class="swiper-slide">
+                    <div class="item">
+                        <div class="item-image">
+                            <img src="commonFiles/img/tetris.png" alt="img">
+                        </div>
+                        <div class="item-details">
+                            <div class="item-title">Tetris</div>
+                            <div class="item-text">
+                                "Tetris" — это популярная игра, в которой фигуры разных форм падают сверху вниз. Цель —
+                                поворачивать и размещать их так, чтобы они заполнили горизонтальные линии, которые
+                                исчезают, принося очки. В этом варианте игры каждые 300 очков скорость падения фигур
+                                увеличивается, делая игру более сложной и увлекательной.
+                            </div>
+                            <div class="item-extra">
+                                <a href="tetris/tetris.html" class="item-button">Играть</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Дополнительный пустой item -->
+                <div class="swiper-slide">
+                    <div class="item">
+                        <div class="item-image">
+                            <img src="commonFiles/img/forEmptyCard.jpg" alt="img">
+                        </div>
+                        <div class="item-details">
+                            <div class="item-title">Пустой элемент</div>
+                            <div class="item-text">
+                                Этот элемент добавлен для заполнения слайдера.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Дополнительный пустой item -->
+                <div class="swiper-slide">
+                    <div class="item">
+                        <div class="item-image">
+                            <img src="commonFiles/img/forEmptyCard.jpg" alt="img">
+                        </div>
+                        <div class="item-details">
+                            <div class="item-title">Пустой элемент</div>
+                            <div class="item-text">
+                                Этот элемент добавлен для заполнения слайдера.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Кнопки управления -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
     </div>
 </main>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    // Инициализация Swiper
+    const swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        spaceBetween: 24,
+        loop: true,
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+            1024: {
+                slidesPerView: 2,
+                spaceBetween: 16,
+            },
+
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 16,
+            },
+
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 16,
+            }
+        },
+    });
+</script>
+
 
 </body>
 </html>
