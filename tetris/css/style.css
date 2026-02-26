@@ -1,68 +1,124 @@
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
 
-
-/**/
 #game-container {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    font-family: "VT323", monospace;
+    align-items: flex-start;
+    gap: var(--size_4);
     position: relative;
 }
 
-/*main canvas*/
 #board-container {
     text-align: center;
 }
 
 #tetris-board {
-    border: 2px solid #333;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
 }
 
-/*main canvas*/
-
-
-/*control panel*/
 #controls {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 200px;
+    max-width: 220px;
     width: 100%;
+    font-family: "VT323", monospace;
 }
 
 #score {
-    font-size: 28px;
+    font-size: 34px;
+    margin-bottom: 10px;
+    color: var(--green_3);
+    text-shadow: 0 0 8px rgba(63, 178, 123, 0.25);
+}
+
+#next-piece-container {
+    width: 100%;
+    display: grid;
+    justify-items: center;
     margin-bottom: 10px;
 }
 
 #next-piece {
-    border: 2px solid #333;
-    background-color: #fff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.buttons-wrapper {
+    width: 100%;
+    display: grid;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+#start-button,
+#restart-button {
+    width: 100%;
+    font-family: "VT323", monospace;
+    font-size: 28px;
+    padding: 8px 18px;
+}
+
+#instructions {
+    font-size: 24px;
+    margin-top: 16px;
+    line-height: 1.2;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+#music-control {
+    margin-top: 16px;
+    font-size: 22px;
+    color: var(--text);
+}
+
+#music-control label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+#music-control input {
+    accent-color: var(--green_2);
 }
 
 .d-pad {
     display: none;
-    /*max-width: 150px;*/
     width: 100%;
-    /*max-height: 150px;*/
-    /*height: 100%;*/
-    position: relative;
-    margin-top: 20px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
 }
 
 .d-pad-button {
-    /*position: absolute;*/
-    width: 50px;
-    height: 50px;
-    background-color: #ddd;
-    border: 1px solid #999;
+    width: 54px;
+    height: 54px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.06);
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 24px;
     user-select: none;
+    transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
+}
+
+.d-pad-button:hover {
+    transform: translateY(-1px);
+    border-color: rgba(63, 178, 123, 0.35);
+    background: rgba(63, 178, 123, 0.08);
+}
+
+.d-pad-button:active {
+    transform: translateY(0);
 }
 
 .left-right {
@@ -76,93 +132,43 @@
     gap: 10px;
 }
 
-/*#left {*/
-/*    top: 50px;*/
-/*    left: 0;*/
-/*}*/
-
-/*#right {*/
-/*    top: 50px;*/
-/*    right: 0;*/
-/*}*/
-
-/*#down {*/
-/*    top: 100px;*/
-/*    left: 50px;*/
-/*}*/
-
-/*#rotate {*/
-/*    top: 0;*/
-/*    left: 50px;*/
-/*}*/
-
-.buttons-wrapper {
-    position: relative;
-    width: 100%;
-}
-
-#start-button, #restart-button {
-    font-family: "VT323", monospace;
-    font-size: 24px;
-    padding: 10px 20px;
-    margin-top: 20px;
-    cursor: pointer;
-    display: block;
-    width: 100%;
-}
-
-#instructions {
-    font-size: 18px;
-    margin-top: 20px;
-    text-align: center;
-}
-
-#music-control {
-    margin-top: 20px;
-    font-size: 18px;
-}
-
-#restart-button {
-    position: absolute;
-    margin-top: 20px;
-    top: 0;
-    left: 0;
-}
-
-
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 900px) {
     #game-container {
         flex-direction: column;
         align-items: center;
+        gap: var(--size_3);
     }
 
     #controls {
         max-width: 302px;
     }
 
-    #instructions {
-        display: none;
-    }
-
-    #next-piece-container {
-        position: absolute;
-        bottom: 100px;
-        right: calc(50% - 90px);
-    }
-
     .d-pad {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #tetris-board {
+        width: 100%;
+        max-width: 300px;
     }
 
     #score {
-        position: absolute;
-        left: 37px;
+        font-size: 30px;
     }
 
-    #next-piece {
-        border: none;
-        z-index: -1;
+    #instructions {
+        font-size: 21px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .d-pad-button {
+        transition: none;
+    }
+
+    .d-pad-button:hover {
+        transform: none;
     }
 }

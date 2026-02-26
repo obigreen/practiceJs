@@ -1,50 +1,355 @@
-* {
+:root {
+    --bg: #181818;
+    --surface: #252525;
+    --surface-soft: #1f1f1f;
+
+    --text: #ffffff;
+    --text-muted: rgba(255, 255, 255, 0.72);
+
+    --green_1: #157940;
+    --green_2: #15794d;
+    --green_3: #3fb27b;
+
+    --red: #a5260a;
+
+    --border: rgba(255, 255, 255, 0.1);
+
+    --container: 1120px;
+
+    --size_1: 8px;
+    --size_2: 12px;
+    --size_3: 16px;
+    --size_4: 20px;
+    --size_5: 28px;
+    --size_6: 40px;
+
+    --radius_1: 12px;
+    --radius_2: 16px;
+    --radius_3: 22px;
+
+    --shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+    --focus: 0 0 0 3px rgba(63, 178, 123, 0.35);
+}
+
+*,
+*::before,
+*::after {
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
+html,
 body {
-    font-family: Arial, sans-serif;
+    min-height: 100%;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    background:
+        radial-gradient(1100px 800px at 15% 0%, rgba(21, 121, 77, 0.22), transparent 55%),
+        radial-gradient(900px 650px at 95% 25%, rgba(63, 178, 123, 0.18), transparent 55%),
+        var(--bg);
+    color: var(--text);
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    line-height: 1.5;
+}
+
+img,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 a {
+    color: inherit;
     text-decoration: none;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
     color: inherit;
 }
 
-.main {
+::selection {
+    background: rgba(63, 178, 123, 0.35);
+}
 
+:focus-visible {
+    outline: none;
+    box-shadow: var(--focus);
+    border-radius: 10px;
 }
 
 .container {
-    max-width: 1200px;
+    width: 100%;
+    max-width: var(--container);
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 var(--size_3);
 }
 
-.header,
-.ref {
-    padding: 20px 0;
+.header {
+    padding: var(--size_5) 0 var(--size_3);
 }
 
 .header .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: var(--size_3);
+    border-radius: var(--radius_2);
+    padding-left: var(--size_3);
+    padding-right: var(--size_3);
+    padding-top: var(--size_2);
+    padding-bottom: var(--size_2);
 }
 
 .title {
-    font-size: 35px;
+    font-size: clamp(26px, 4vw, 36px);
+    line-height: 1.2;
+    letter-spacing: 0.2px;
+}
+
+.back,
+.header nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: var(--radius_1);
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.04);
+    transition: transform 140ms ease, border-color 140ms ease, background 140ms ease;
+}
+
+.back:hover,
+.header nav a:hover {
+    transform: translateY(-1px);
+    border-color: rgba(63, 178, 123, 0.35);
+    background: rgba(255, 255, 255, 0.06);
 }
 
 .main {
-    margin-top: 150px;
-    margin-bottom: 150px;
+    padding: var(--size_4) 0 var(--size_6);
 }
 
-.ref .container {
+.card,
+.surface-card,
+.game-shell {
+    border-radius: var(--radius_3);
+    border: 1px solid var(--border);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
+    box-shadow: var(--shadow);
+    padding: var(--size_4);
+}
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--radius_1);
+    border: 1px solid transparent;
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: transform 140ms ease, filter 140ms ease, border-color 140ms ease, background 140ms ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn_accent {
+    background: radial-gradient(circle at 30% 30%, var(--green_3), var(--green_2));
+    color: var(--surface);
+    border-color: rgba(0, 0, 0, 0.22);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+}
+
+.btn_secondary {
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text);
+    border-color: var(--border);
+}
+
+/* === Footer credit badge === */
+.footer {
+    padding: var(--size_3) 0 var(--size_5);
+}
+
+.footer_inner {
+    display: flex;
+}
+
+.credit {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--size_2);
+    align-items: center;
+    width: fit-content;
+    max-width: 100%;
+    padding: 12px 14px;
+    border-radius: var(--radius_2);
+    border: 1px solid var(--border);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.03));
+    box-shadow: var(--shadow);
+}
+
+.source_logo {
+    display: grid;
+    place-items: center;
+}
+
+.source_logoSvg {
+    color: var(--text);
+    width: 60px;
+    height: 60px;
+}
+
+.source_text {
+    display: grid;
+    gap: 2px;
+}
+
+.source_title {
+    font-size: 16px;
+    line-height: 1.2;
+    letter-spacing: 0.2px;
+}
+
+.source_info_title {
+    color: var(--green_3);
+}
+
+.source_meta {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
+}
+
+.source_author {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+}
+
+.source_author a {
+    color: inherit;
+    transition: color 140ms ease;
+}
+
+.source_author a:hover {
+    color: var(--green_3);
+}
+
+.source_link {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    width: max-content;
+    padding: 3px 7px;
+    border-radius: 5px;
+    background: radial-gradient(circle at 30% 30%, var(--green_3), var(--green_2));
+    color: var(--surface);
+    border: 1px solid rgba(0, 0, 0, 0.22);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+    transition: transform 140ms ease, filter 140ms ease;
+}
+
+.source_link:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.02);
+}
+
+.source_link:active {
+    transform: translateY(0);
+    filter: brightness(0.98);
+}
+
+.source_linkIcon {
+    display: grid;
+    place-items: center;
+}
+
+.source_linkText {
+    font-size: 13px;
+    line-height: 13px;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+}
+
+@media screen and (max-width: 900px) {
+    .header {
+        padding-top: var(--size_4);
+    }
+
+    .main {
+        padding-top: var(--size_3);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .header .container {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .card,
+    .surface-card,
+    .game-shell {
+        padding: var(--size_3);
+        border-radius: var(--radius_2);
+    }
+
+    .credit {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .credit {
+        border-radius: var(--radius_3);
+    }
+
+    .source_text {
+        min-width: unset;
+    }
+
+    .source_meta {
+        flex-wrap: wrap;
+        row-gap: 8px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .back,
+    .header nav a,
+    .btn {
+        transition: none;
+    }
+
+    .back:hover,
+    .header nav a:hover,
+    .btn:hover {
+        transform: none;
+    }
+
+    .source_link {
+        transition: none;
+    }
+
+    .source_link:hover,
+    .source_link:active {
+        transform: none;
+        filter: none;
+    }
 }

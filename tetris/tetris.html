@@ -13,20 +13,22 @@
     <div class="container">
         <h1 class="title">Tetris</h1>
         <nav>
-            <a href="../index.html">
-                Главная
+            <a class="back" href="../index.html">
+                🏃🚶🧎
             </a>
         </nav>
     </div>
 </header>
 
+<!-- TODO - в мобилке, перенести табло next фигуры через абсолют между кнопками и убрать белый фон, просто будет в ток появляться фигура между кнопок и перенести в мобилке счетчик очков, ну или открыть через block/none аналог -->
+
 <main class="main">
     <div class="container">
         <!--code-->
-        <div id="game-container">
+        <div id="game-container" class="game-shell">
             <div id="board-container">
                 <!--canvas-->
-                <canvas id="tetris-board" width="300px" height="600px"></canvas>
+                <canvas id="tetris-board" width="300" height="600"></canvas>
                 <!--canvas-->
             </div>
             <div id="controls">
@@ -49,8 +51,8 @@
                     <!--canvas-->
                 </div>
                 <div class="buttons-wrapper">
-                    <button id="start-button">Start Game</button>
-                    <button id="restart-button" style="display: none">Restart Game</button>
+                    <button id="start-button" class="btn btn_accent">Start Game</button>
+                    <button id="restart-button" class="btn btn_secondary" style="display: none">Restart Game</button>
                 </div>
 
                 <div id="instructions">
@@ -68,10 +70,50 @@
     </div>
 </main>
 
-<footer class="ref">
-    <div class="container">
-        <img width="20" height="20" src="https://img.icons8.com/ios-filled/50/link--v1.png" alt="link--v1"/>
-        <a class="ref-a" target="_blank" href="https://codepen.io/tommyho/pen/PorzmrV">CPChallenge - Geometric Puzzles Retro Tetris Simulator - Tommy Ho</a>
+<footer class="footer">
+    <div class="container footer_inner">
+        <div class="credit">
+            <span class="source_logo" aria-hidden="true">
+                <svg class="source_logoSvg" width="60" height="60" viewBox="0 0 24 24" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2.4 3.2 7.5V16.5L12 21.6l8.8-5.1V7.5L12 2.4Z"
+                          stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+                    <path d="M3.2 7.5 12 12.6l8.8-5.1" stroke="currentColor" stroke-width="1.2"
+                          stroke-linejoin="round"/>
+                    <path d="M12 12.6V21.6" stroke="currentColor" stroke-width="1.2"
+                          stroke-linecap="round"/>
+                    <path d="M12 2.4v10.2" stroke="currentColor" stroke-width="1.1"
+                          stroke-linecap="round" opacity="0.65"/>
+                </svg>
+            </span>
+
+            <div class="source_text">
+                <div class="source_title"><span class="source_info_title">Project name:</span> Retro Tetris Simulator</div>
+                <div class="source_meta">
+                    <span class="source_author"><span class="source_info_title">Author:</span> <a target="_blank" rel="noreferrer noopener" href="https://codepen.io/tommyho">Tommy Ho</a></span>
+                </div>
+                <div>
+                    <a class="source_link"
+                       href="https://codepen.io/tommyho/pen/PorzmrV"
+                       target="_blank"
+                       rel="noreferrer noopener"
+                       aria-label="Open source code">
+                        <span class="source_linkIcon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.6 13.4a4.3 4.3 0 0 1 0-6.1l1.6-1.6a4.3 4.3 0 0 1 6.1 6.1l-1.1 1.1"
+                                      stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                      stroke-linejoin="round"/>
+                                <path d="M13.4 10.6a4.3 4.3 0 0 1 0 6.1l-1.6 1.6a4.3 4.3 0 0 1-6.1-6.1l1.1-1.1"
+                                      stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                      stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                        <span class="source_linkText">Source</span>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 </footer>
 
